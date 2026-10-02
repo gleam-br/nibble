@@ -31,7 +31,10 @@ pub fn readme_test() {
 
 // UTILS -----------------------------------------------------------------------
 
-fn should(description: String, run: fn(fn(String, Point) -> Nil) -> Nil) -> Nil {
+fn should(
+  description: String,
+  run: fn(fn(String, Point) -> Nil) -> Nil,
+) -> Nil {
   use input, expected <- run
 
   io.print("should " <> description)

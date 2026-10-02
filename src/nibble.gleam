@@ -704,7 +704,10 @@ type Bag(tok, ctx) {
   Append(Bag(tok, ctx), Bag(tok, ctx))
 }
 
-fn bag_from_state(state: State(tok, ctx), problem: Error(tok)) -> Bag(tok, ctx) {
+fn bag_from_state(
+  state: State(tok, ctx),
+  problem: Error(tok),
+) -> Bag(tok, ctx) {
   Cons(Empty, DeadEnd(state.pos, problem, state.ctx))
 }
 

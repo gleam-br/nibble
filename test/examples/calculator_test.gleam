@@ -116,7 +116,10 @@ pub fn mismatched_parens_test() {
 
 // UTILS -----------------------------------------------------------------------
 
-fn should(description: String, run: fn(fn(String, Float) -> Nil) -> Nil) -> Nil {
+fn should(
+  description: String,
+  run: fn(fn(String, Float) -> Nil) -> Nil,
+) -> Nil {
   use input, expected <- run
 
   io.print("should " <> description)
